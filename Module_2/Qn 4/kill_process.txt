@@ -1,0 +1,24 @@
+bash: kill: 
+top: arguments must be process or job IDs
+bash: kill: -: arguments must be process or job IDs
+bash: kill: 22:39:09: arguments must be process or job IDs
+bash: kill: up: arguments must be process or job IDs
+bash: kill: (1) - Operation not permitted
+bash: kill: day,: arguments must be process or job IDs
+bash: kill: 1:41,: arguments must be process or job IDs
+bash: kill: (1) - Operation not permitted
+bash: kill: user,: arguments must be process or job IDs
+bash: kill: load: arguments must be process or job IDs
+bash: kill: average:: arguments must be process or job IDs
+bash: kill: 0.71,: arguments must be process or job IDs
+bash: kill: 0.83,: arguments must be process or job IDs
+bash: kill: 1.37: arguments must be process or job IDs
+bash: kill: Tasks:: arguments must be process or job IDs
+bash: kill: (218) - No such process
+bash: kill: total,: arguments must be process or job IDs
+bash: kill: (1) - Operation not permitted
+bash: kill: running,: arguments must be process or job IDs
+bash: kill: (217) - No such process
+bash: kill: sleeping,: arguments must be process or job IDs
+Killed
+

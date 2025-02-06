@@ -1,0 +1,20 @@
+server_name=localhost
+database_host=localhost
+database_port=3306
+
+# Logging configuration
+log_level=INFO
+log_path=/var/log/app.log
+
+# API configuration
+api_host=localhost
+api_port=8080
+
+# Security settings
+enable_ssl=false
+ssl_certificate_path=/etc/ssl/certs/app.crt
+ssl_key_path=/etc/ssl/private/app.key
+
+# Application settings
+max_threads=10
+timeout=30

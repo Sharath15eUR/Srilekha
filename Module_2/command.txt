@@ -1,0 +1,25 @@
+#Large files greater than 1 MB
+
+find . -type f -size +1M > large_files.txt
+
+#Replace localhost with 127.0.0.1
+
+sed 's/localhost/127.0.0.1/g' config.txt > updated_config.txt
+
+
+
+#Search Error Lines exclude Debug
+
+grep "ERROR" log.txt | grep -v "DEBUG" > filtered_log.txt
+
+#Identify process id with high memory
+
+pid=$(top -b -o %MEM | awk '{print $1}')
+kill -9 $pid
+
+
+#List all gateways in sorted order
+
+ip route | awk '/default/{print $3}' | sort
+
+
