@@ -1,0 +1,32 @@
+ubuntu@ubuntu:~/Module_5/Recursive_fn$ ./file_analyzer.sh -d logs -k error
+Searching directory: logs for keyword: error
+Script name: ./file_analyzer.sh
+Number of arguments: 0
+Exit status: 0
+All arguments: 
+ubuntu@ubuntu:~/Module_5/Recursive_fn$ ./file_analyzer.sh -f script.sh -k TODO
+Searching file: script.sh for keyword: TODO
+TODO
+Script name: ./file_analyzer.sh
+Number of arguments: 0
+Exit status: 0
+All arguments: 
+ubuntu@ubuntu:~/Module_5/Recursive_fn$ ./file_analyzer.sh --help
+Usage: ./file_analyzer.sh [OPTIONS]
+
+Options:
+  -d <directory>    Directory to search recursively
+  -k <keyword>      Keyword to search
+  -f <file>         Search for keyword in specific file
+  --help            Display this help menu
+  
+ubuntu@ubuntu:~/Module_5/Here_Doc$ ./myscript.sh --help
+Usage: script.sh [options]
+Options:
+  --help      Display this help menu
+  --search    Search for a keyword in a specified file
+Example:
+  ./script.sh --search "keyword" file.txt
+ubuntu@ubuntu:~/Module_5/Here_Doc$ ./myscript.sh --search "Hello" myfile.txt
+Hello World.Shell Scripting has started here!
+

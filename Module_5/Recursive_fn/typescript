@@ -1,0 +1,26 @@
+Script started on 2025-02-06 05:46:22+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="132" LINES="40"]
+[?2004h]0;ubuntu@ubuntu: ~/Module_5/Recursive_fn[01;32mubuntu@ubuntu[00m:[01;34m~/Module_5/Recursive_fn[00m$ ./file_analyzer.sh -f[Kd logs -k error
+[?2004lSearching directory: logs for keyword: error
+Script name: ./file_analyzer.sh
+Number of arguments: 0
+Exit status: 0
+All arguments: 
+[?2004h]0;ubuntu@ubuntu: ~/Module_5/Recursive_fn[01;32mubuntu@ubuntu[00m:[01;34m~/Module_5/Recursive_fn[00m$ ./file_analyzer.sh -f script.sh -l[Kk TODO
+[?2004lSearching file: script.sh for keyword: TODO
+[01;31m[KTODO[m[K
+Script name: ./file_analyzer.sh
+Number of arguments: 0
+Exit status: 0
+All arguments: 
+[?2004h]0;ubuntu@ubuntu: ~/Module_5/Recursive_fn[01;32mubuntu@ubuntu[00m:[01;34m~/Module_5/Recursive_fn[00m$ ./file_analyzer.sh --help
+[?2004lUsage: ./file_analyzer.sh [OPTIONS]
+
+Options:
+  -d <directory>    Directory to search recursively
+  -k <keyword>      Keyword to search
+  -f <file>         Search for keyword in specific file
+  --help            Display this help menu
+[?2004h]0;ubuntu@ubuntu: ~/Module_5/Recursive_fn[01;32mubuntu@ubuntu[00m:[01;34m~/Module_5/Recursive_fn[00m$ exit
+[?2004lexit
+
+Script done on 2025-02-06 05:47:27+00:00 [COMMAND_EXIT_CODE="0"]
