@@ -1,0 +1,1 @@
+-rw-r--r-- 1 ubuntu ubuntu 0 Feb  6 06:07 file2.txt

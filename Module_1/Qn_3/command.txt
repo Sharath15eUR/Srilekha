@@ -1,0 +1,12 @@
+ubuntu@ubuntu:~/Module_1/Qn_3$ mkdir -p dir1/dir2
+ubuntu@ubuntu:~/Module_1/Qn_3$ touch dir1/dir2/file.txt
+ubuntu@ubuntu:~/Module_1/Qn_3$ ln -s dir1/dir2/file.txt dir1/file_link.txt
+ubuntu@ubuntu:~/Module_1/Qn_3$ tree
+.
+└── dir1
+    ├── dir2
+    │   └── file.txt
+    └── file_link.txt -> dir1/dir2/file.txt
+
+3 directories, 2 files
+

@@ -1,0 +1,3 @@
+chmod +x file1.txt
+
+ls -l file1.txt

@@ -1,0 +1,6 @@
+total 0
+-rw-rw-r-- 1 ubuntu ubuntu 0 Feb  6 06:14 sorted_time.txt
+-rw-rw-r-- 1 ubuntu ubuntu 0 Feb  6 06:14 output.txt
+-rw-rw-r-- 1 ubuntu ubuntu 0 Feb  6 06:14 f1.txt
+-rw-rw-r-- 1 ubuntu ubuntu 0 Feb  6 06:14 f2.txt
+-rw-rw-r-- 1 ubuntu ubuntu 0 Feb  6 06:14 f3.txt

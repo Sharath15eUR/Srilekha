@@ -1,0 +1,3 @@
+chmod g-w file2.txt
+
+ls -l file2.txt
