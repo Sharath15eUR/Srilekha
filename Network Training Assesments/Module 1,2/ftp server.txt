@@ -1,0 +1,24 @@
+sudo apt update 
+sudo apt install vsftpd -y
+sudo nano /etc/vsftpd.conf
+Modify or add the following lines:
+anonymous_enable=NO 
+local_enable=YES 
+write_enable=YES 
+chroot_local_user=YES
+pasv_enable=YES 
+pasv_min_port=40000 
+pasv_max_port=50000 
+allow_writeable_chroot=YES
+sudo systemctl restart vsftpd
+sudo adduser ftpuser(username) 
+sudo passwd ftpuser
+Grant permissions
+sudo mkdir -p /home/ftpuser/ftp 
+sudo chown ftpuser:ftpuser /home/ftpuser/ftp
+ip a
+ftp 192.168.39.113
+username:ftpuser
+password:Lekha@123
+get abc.txt
+put abc.txt

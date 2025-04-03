@@ -1,0 +1,32 @@
+Purpose: A management VLAN is used to provide secure remote access to network devices like switches. It's best practice to separate management traffic from user traffic for security reasons.
+Choose a VLAN ID: Let's use VLAN 99 for management.
+Choose an Interface: Select an unused interface on the switch (e.g., FastEthernet0/4 or FastEthernet0/5).
+Assign an IP Address: Assign an IP address to the VLAN 99 interface. This IP address will be used for remote access.
+Switch(config)#interface vlan 99
+Switch(config-if)#ip address 192.168.99.1 255.255.255.0
+Switch(config-if)#no shutdown
+Switch(config-if)#exit
+Generate RSA Keys: SSH requires RSA keys for encryption
+Switch(config)#line vty 0 15
+Switch(config-line)#transport input ssh
+Switch(config-line)#login local
+Switch(config-line)#exit
+Create a Local User:Switch(config)#username admin privilege 15 secret cisco
+admin is the username.
+privilege 15 gives the user full administrative rights.
+cisco is the password.
+
+Enable Telnet (Less Secure, Use for Testing Only):
+
+Configure VTY Lines:Switch(config)#line vty 0 15
+Switch(config-line)#login local
+Switch(config-line)#exit
+
+Test Remote Access:
+Connect a PC to VLAN 99: Connect a PC to the FastEthernet0/4 interface on the switch.
+Configure PC IP Address: Assign an IP address to the PC in the 192.168.99.0/24 subnet (e.g., 192.168.99.2).
+Test SSH:Open a command prompt on the PC.
+Use the ssh command:ssh admin@192.168.99.1
+Enter the password (cisco in our example).
+Test Telnet (If Enabled):Use the telnet command:telnet 192.168.99.1
+Enter the username and password.

@@ -1,0 +1,14 @@
+The DHCP process captured in Wireshark follows these steps:
+DHCP Discover (Src: 0.0.0.0 → Dst: 255.255.255.255):
+The client (without an IP) broadcasts a request to find a DHCP server.
+DHCP Offer (Src: 192.168.39.77 → Dst: 192.168.39.88):
+The DHCP server (192.168.39.77) responds with an available IP address for the client.
+DHCP Request (Src: 0.0.0.0 → Dst: 255.255.255.255):
+The client requests to use the offered IP, broadcasting its acceptance.
+DHCP Acknowledge (Src: 192.168.39.77 → Dst: 192.168.39.88):
+The server confirms the lease, assigning the IP to the client.
+
+Initially, DHCP messages were not shown in Wireshark because the device already had a valid IP address and did not need to request a new one. DHCP traffic only occurs when a client requests an IP address from the server.
+DHCP traffic is only generated when a device joins a network, renews its lease, or requests a new IP.
+ipconfig /renew -forced device to release its assigned IP address, making it "forget" its current lease.
+ipconfig /renew-This triggered the DHCP process again, forcing the client to request an IP 

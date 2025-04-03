@@ -1,0 +1,16 @@
+Interface Name (eth0): Name of the network interface.
+flags:
+UP → Interface is active.
+BROADCAST → Supports broadcasting.
+RUNNING → Interface is operational.
+MULTICAST → Supports multicasting.
+mtu (Maximum Transmission Unit): The largest packet size allowed (default: 1500 bytes).
+inet (IPv4 Address): 192.168.1.100 is the assigned IP address.
+netmask: 255.255.255.0 defines the subnet.
+broadcast: 192.168.1.255 is the broadcast address.
+inet6 (IPv6 Address): fe80::1a2b:3c4d:5e6f:7g8h/64 is the IPv6 address.
+ether (MAC Address): 00:1A:2B:3C:4D:5E is the hardware address.
+txqueuelen: Length of the transmit queue buffer.
+RX (Received Data): Packets received and their size.
+TX (Transmitted Data): Packets sent and their size.
+Errors/Dropped/Overruns/Collisions: Indicates network transmission issues.
