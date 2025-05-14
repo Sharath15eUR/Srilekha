@@ -1,0 +1,12 @@
+Enter the number of elements: 5
+Enter 5 integers:
+1
+2
+3
+4
+5
+Rearranged array:
+2 4 1 3 5 
+
+
+=== Code Execution Successful ===

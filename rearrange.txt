@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void rightShift(int *start, int *end) {
+    int temp = *end;
+    for (int *p = end; p > start; p--) {
+        *p = *(p - 1);
+    }
+    *start = temp;
+}
+
+
+void rearrangeEvenOdd(int *arr, int size) {
+    int *curr = arr;
+    int *end = arr + size;
+
+    for (int *i = arr; i < end; i++) {
+        if (*i % 2 == 0) {
+            rightShift(curr, i);
+            curr++;
+        }
+    }
+}
+
+int main() {
+    int size;
+    printf("Enter the number of elements: ");
+    scanf("%d", &size);
+
+ 
+    int *arr = (int *)malloc(size * sizeof(int));
+    if (arr == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+
+  
+    printf("Enter %d integers:\n", size);
+    for (int *p = arr; p < arr + size; p++) {
+        scanf("%d", p);
+    }
+
+
+    rearrangeEvenOdd(arr, size);
+
+
+    printf("Rearranged array:\n");
+    for (int *p = arr; p < arr + size; p++) {
+        printf("%d ", *p);
+    }
+    printf("\n");
+
+
+    free(arr);
+    return 0;
+}

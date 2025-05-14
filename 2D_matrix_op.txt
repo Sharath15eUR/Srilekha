@@ -1,0 +1,11 @@
+Enter matrix size (n): 3
+Enter sorted 3x3 matrix:
+1 3 2
+2 5 9
+
+3 6 10
+Enter key to search: 5
+Key 5 found in matrix.
+
+
+=== Code Execution Successful ===

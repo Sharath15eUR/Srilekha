@@ -1,0 +1,50 @@
+Menu:
+1. Add tasks to a day
+2. Display all tasks
+3. Exit
+Enter choice: 1
+Enter the day to add tasks : Wednesday
+Enter task 1 (or type 'done' to stop): End-sem examination
+Enter task 2 (or type 'done' to stop): Product release
+Enter task 3 (or type 'done' to stop): Project review
+
+Menu:
+1. Add tasks to a day
+2. Display all tasks
+3. Exit
+Enter choice: 1
+Enter the day to add tasks : Wednesday
+
+Menu:
+1. Add tasks to a day
+2. Display all tasks
+3. Exit
+Enter choice: 2
+
+Weekly Tasks:
+Monday:
+  No tasks.
+Tuesday:
+  No tasks.
+Wednesday:
+  - End-sem examination
+  - Product release
+  - Project review
+Thursday:
+  No tasks.
+Friday:
+  No tasks.
+Saturday:
+  No tasks.
+Sunday:
+  No tasks.
+
+Menu:
+1. Add tasks to a day
+2. Display all tasks
+3. Exit
+Enter choice: 3
+Exiting program.
+
+
+=== Code Execution Successful ===

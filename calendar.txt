@@ -1,0 +1,104 @@
+#include<stdio.h>
+#include<string.h>
+
+#define WEEK 7
+#define TASKS 3
+#define TASK_LEN 100
+
+struct Day {
+    char dayName[10];
+    char tasks[TASKS][TASK_LEN];
+    int count;
+    
+};
+
+void initialize_week(struct Day week[]){
+    const char *dayNames[WEEK] = {
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+    };
+    for (int i = 0; i < WEEK; i++) {
+        strcpy(week[i].dayName, dayNames[i]);
+        week[i].count = 0;
+    }
+}
+
+void inputTasks(struct Day week[]) {
+    char day[10];
+    int found = 0;
+
+    printf("Enter the day to add tasks : ");
+    scanf("%s", day);
+
+    for (int i = 0; i < WEEK; i++) {
+        if (strcasecmp(day, week[i].dayName) == 0) {
+            found = 1;
+            int taskNum = 0;
+            while (week[i].count < TASKS) {
+                printf("Enter task %d (or type 'done' to stop): ", week[i].count + 1);
+                getchar(); // clear newline
+                fgets(week[i].tasks[week[i].count], TASK_LEN, stdin);
+                
+                // Remove newline character
+                size_t len = strlen(week[i].tasks[week[i].count]);
+                if (len > 0 && week[i].tasks[week[i].count][len - 1] == '\n') {
+                    week[i].tasks[week[i].count][len - 1] = '\0';
+                }
+
+                if (strcmp(week[i].tasks[week[i].count], "done") == 0) {
+                    break;
+                }
+
+                week[i].count++;
+            }
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Invalid day name entered.\n");
+    }
+}
+void displayTasks(struct Day week[]) {
+    printf("\nWeekly Tasks:\n");
+    for (int i = 0; i < WEEK; i++) {
+        printf("%s:\n", week[i].dayName);
+        if (week[i].count == 0) {
+            printf("  No tasks.\n");
+        } else {
+            for (int j = 0; j < week[i].count; j++) {
+                printf("  - %s\n", week[i].tasks[j]);
+            }
+        }
+    }
+}
+int main() {
+    struct Day week[WEEK];
+    int choice;
+
+    initialize_week(week);
+
+    do {
+        printf("\nMenu:\n");
+        printf("1. Add tasks to a day\n");
+        printf("2. Display all tasks\n");
+        printf("3. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                inputTasks(week);
+                break;
+            case 2:
+                displayTasks(week);
+                break;
+            case 3:
+                printf("Exiting program.\n");
+                break;
+            default:
+                printf("Invalid choice.\n");
+        }
+    } while (choice != 3);
+
+    return 0;
+}
