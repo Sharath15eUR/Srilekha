@@ -1,0 +1,100 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <unistd.h>
+#include <stdbool.h>
+#include <time.h>
+#include <signal.h>
+
+int N = 10;
+#define RUN_TIME 10 // seconds for thread B and C
+
+// Signal handler to prevent Ctrl+C (SIGINT) from terminating the program
+void handle_sigint(int sig) {
+    printf("\nSIGINT received but termination prevented.\n");
+}
+
+// Function to check if a number is prime
+bool is_prime(int num) {
+    if (num < 2) return false;
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) return false;
+    }
+    return true;
+}
+
+// Thread A: Sum of first N primes
+void* sum_primes(void* arg) {
+    clock_t start_time = clock();
+    printf("Thread A started: Summing primes\n");
+
+    int count = 0, num = 2, sum = 0;
+    while (count < N) {
+        if (is_prime(num)) {
+            sum += num;
+            count++;
+        }
+        num++;
+    }
+
+    printf("Sum of first %d prime numbers: %d\n", N, sum);
+    clock_t end_time = clock();
+    double duration = (double)(end_time - start_time) / CLOCKS_PER_SEC;
+    printf("Thread A completed in %.2f seconds.\n", duration);
+    return NULL;
+}
+
+// Thread B: Print message every 1 second
+void* thread1_func(void* arg) {
+    clock_t start_time = clock();
+    printf("Thread B started: Running every 1 second\n");
+
+    time_t start = time(NULL);
+    while (time(NULL) - start < RUN_TIME) {
+        printf("Thread 1 running\n");
+        sleep(1);
+    }
+
+    clock_t end_time = clock();
+    double duration = (double)(end_time - start_time) / CLOCKS_PER_SEC;
+    printf("Thread B completed in %.2f seconds.\n", duration);
+    return NULL;
+}
+
+// Thread C: Print message every 3 seconds
+void* thread2_func(void* arg) {
+    clock_t start_time = clock();
+    printf("Thread C started: Running every 3 seconds\n");
+
+    time_t start = time(NULL);
+    while (time(NULL) - start < RUN_TIME) {
+        printf("Thread 2 running\n");
+        sleep(3);
+    }
+
+    clock_t end_time = clock();
+    double duration = (double)(end_time - start_time) / CLOCKS_PER_SEC;
+    printf("Thread C completed in %.2f seconds.\n", duration);
+    return NULL;
+}
+
+// Main Function
+int main() {
+    // Register signal handler
+    signal(SIGINT, handle_sigint);
+
+    pthread_t threadA, threadB, threadC;
+
+    printf("Starting threads...\n");
+
+    pthread_create(&threadA, NULL, sum_primes, NULL);
+    pthread_create(&threadB, NULL, thread1_func, NULL);
+    pthread_create(&threadC, NULL, thread2_func, NULL);
+
+    pthread_join(threadA, NULL);
+    pthread_join(threadB, NULL);
+    pthread_join(threadC, NULL);
+
+    printf("All threads completed.\n");
+    return 0;
+}

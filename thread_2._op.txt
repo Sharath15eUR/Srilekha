@@ -1,0 +1,26 @@
+Starting threads...
+Thread B started: Running every 1 second
+Thread 1 running
+Thread A started: Summing primes
+Sum of first 10 prime numbers: 129
+Thread A completed in 0.00 seconds.
+Thread C started: Running every 3 seconds
+Thread 2 running
+Thread 1 running
+Thread 1 running
+Thread 2 running
+Thread 1 running
+Thread 1 running
+Thread 1 running
+Thread 2 running
+Thread 1 running
+Thread 1 running
+Thread 1 running
+Thread 2 running
+Thread 1 running
+Thread B completed in 0.00 seconds.
+Thread C completed in 0.00 seconds.
+All threads completed.
+
+
+=== Code Execution Successful ===
